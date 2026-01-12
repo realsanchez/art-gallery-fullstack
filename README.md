@@ -9,6 +9,8 @@ Final project developed as a team during a Full Stack Bootcamp.
 - Database (MongoDB)
 - Mongoose
 
+## How to Run the Project 
+
 ## My Contribution
 ### Backend
 - Database design and integration
