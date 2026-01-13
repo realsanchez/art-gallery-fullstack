@@ -1,0 +1,82 @@
+:host {
+  display: block;
+  min-height: 200px;
+}
+
+/* Card Styling */
+.card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Link Styling (remove default link styles) */
+.card a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Image Styling */
+.card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-bottom: 4px solid #FCA311; /* Orange accent */
+}
+
+/* Text Content */
+.card h3 {
+  color: #14213D; /* Dark Blue */
+  margin: 1rem 1rem 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+
+.card p {
+  color: #000000; /* Black */
+  margin: 0 1rem 1.5rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  flex-grow: 1; /* Pushes content to fill height if needed */
+}
+
+/* Card Footer */
+.card-footer {
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #eee;
+  padding-top: 0.5rem;
+  margin-top: auto; /* Push to bottom */
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.author {
+  font-weight: 500;
+  color: #14213D;
+}
+
+.likes {
+  color: #e63946;
+}
+

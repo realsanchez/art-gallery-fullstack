@@ -1,0 +1,18 @@
+<div>
+  <h2>Explora las obras de arte que no te puedes perder</h2>
+  <div class="card-container">
+    <app-info-card
+      *ngFor="let card of cards"
+      [route]="card.ruta"
+      [imageUrl]="card.imagenUrl"
+      [title]="card.titulo"
+      [description]="card.descripcion"
+    ></app-info-card>
+    <!-- *ngFor="let card of cards" Itera sobre el array de cards, 
+     para crear una tarjeta por cada elemento del array, 
+     [route]="card.ruta" define la ruta a la que se dirige la tarjeta, 
+     [imageUrl]="card.imagenUrl" define la imagen de la tarjeta, 
+     [title]="card.titulo" define el titulo de la tarjeta, 
+     [description]="card.descripcion" define la descripcion de la tarjeta -->
+  </div>
+</div>

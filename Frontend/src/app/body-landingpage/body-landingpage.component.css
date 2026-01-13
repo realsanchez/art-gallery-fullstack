@@ -1,0 +1,26 @@
+div > h2 {
+  text-align: center;
+  color: #14213D; /* Dark Blue */
+  margin-bottom: 2rem;
+  margin-top: 4rem; /* Added spacing from top carousel */
+  font-family: 'Outfit', sans-serif; /* Assuming font availability */
+  font-size: 2rem;
+}
+
+/* Card Container Grid */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

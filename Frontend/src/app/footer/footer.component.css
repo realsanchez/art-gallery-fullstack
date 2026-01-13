@@ -1,0 +1,61 @@
+.app-footer {
+  background-color: #14213D;
+  color: #E5E5E5;
+  padding: 2rem 0;
+  width: 100%;
+  border-top: 2px solid #FCA311;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.footer-content nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer-content nav a {
+  color: #E5E5E5;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-content nav a:hover {
+  color: #FCA311;
+  transform: translateY(-2px);
+}
+
+.footer-content nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #FCA311;
+  transition: width 0.3s ease;
+}
+
+.footer-content nav a:hover::after {
+  width: 100%;
+}

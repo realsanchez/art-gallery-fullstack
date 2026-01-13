@@ -1,0 +1,151 @@
+/* Carousel Container Styling */
+.carousel {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 8px; /* Optional: adds subtle rounded corners */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Enable stacking for transition */
+.carousel-inner {
+  display: grid;
+  width: 100%;
+}
+
+.carousel-item {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  display: block !important; /* Override bootstrap's display: none */
+  z-index: 0;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* Indicators (Dots) */
+.carousel-indicators {
+  z-index: 2; /* Ensure above images */
+}
+
+.carousel-indicators button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background-color: #e5e5e5; 
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  margin: 0 6px;
+}
+
+.carousel-indicators button.active {
+  background-color: #fca311; 
+  transform: scale(1.2);
+  opacity: 1;
+  box-shadow: 0 0 10px rgba(252, 163, 17, 0.6);
+}
+
+.carousel-indicators button:hover {
+  opacity: 0.8;
+  background-color: #ffffff;
+}
+
+/* Navigation Arrows */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  z-index: 2; /* Ensure above images */
+  background: none;
+  border: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+  width: 3rem;
+  height: 3rem;
+  background-size: 100%, 100%;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+  background: rgba(20, 33, 61, 0.2); 
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  filter: drop-shadow(0px 0px 5px #fca311); 
+}
+
+
+/* Caption Styling */
+.carousel-caption {
+  background: rgba(20, 33, 61, 0.75); 
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  bottom: 20%; /* Moved up slightly */
+  left: 15%;
+  right: 15%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.carousel-caption h5 {
+  color: #ffffff; 
+  font-family: 'Outfit', sans-serif; 
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  letter-spacing: 1px;
+}
+
+.carousel-caption p {
+  color: #e5e5e5; 
+  font-size: 1.1rem;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+/* Image styling */
+.carousel-item img {
+  object-fit: cover;
+  object-position: center;
+  height: 75vh; /* Takes 75% of the viewport height */
+  width: 100%;
+  filter: brightness(0.9); /* Slightly dim image to pop text */
+  /* transition: transform 10s ease; Remove zoom if distracting, or keep */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 60vh; /* On mobile, 75vh might be too tall for portrait */
+  }
+
+  .carousel-caption {
+    bottom: 5%;
+    left: 2%;
+    right: 2%;
+    padding: 1rem;
+    background: rgba(20, 33, 61, 0.85);
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+}

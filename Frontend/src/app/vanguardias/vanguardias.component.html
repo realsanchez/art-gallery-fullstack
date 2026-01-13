@@ -1,0 +1,33 @@
+<h2>VANGUARDIAS</h2>
+
+@if (isLoading()) {
+<p>Cargando obras de vanguardias...</p>
+} @if (!isLoading() && obras2().length > 0) {
+<div class="container-obras">
+  @for (obra of obras2(); track obra.titulo) {
+  <div class="obra">
+    <span>{{ obra.titulo }}</span>
+    <span>{{ obra.artista.nombre }} ({{ obra.anio }})</span>
+    <img src="http://localhost:3000/{{ obra.image }}" alt="" />
+    <p>{{ obra.description }}</p>
+
+    <button class="btn-ver-mas" (click)="abrirModal(obra)">Ver más</button>
+  </div>
+  }
+</div>
+} @else if (!isLoading() && obras2().length === 0) {
+<p>No se encontraron obras de Vanguardias.</p>
+} @if (mostrarModal && obraSeleccionada) {
+<div class="modal-fondo" (click)="cerrarModal()">
+  <div class="modal-tarjeta" (click)="$event.stopPropagation()">
+    <h3>{{ obraSeleccionada.titulo }}</h3>
+    <span>{{ obraSeleccionada.artista.nombre }} ({{ obraSeleccionada.anio }})</span>
+
+    <img src="http://localhost:3000/{{ obraSeleccionada.image }}" alt="" />
+
+    <p>{{ obraSeleccionada.bibliografia }}</p>
+
+    <button class="btn-cerrar" (click)="cerrarModal()">Cerrar</button>
+  </div>
+</div>
+}

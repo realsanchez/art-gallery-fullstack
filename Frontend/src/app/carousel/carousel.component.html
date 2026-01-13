@@ -1,0 +1,46 @@
+<!-- CarouselComponent es el elemento hijo que recibe las propiedades del componente padre HomeComponent-->
+<div id="carouselExampleCaptions" class="carousel slide">
+  <!-- inicializa el componente de bootstrap y habilitala animación de deslizamiento -->
+  <div class="carousel-indicators">
+    <!-- crea los indicadores de la imagen -->
+    <!-- crea un bucle para crear tantos indicadores como imagenes -->
+    <!-- aria-label="Slide {{ i + 1 }}"  es para crear un identificador para cada indicador/slide -->
+    <button
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      *ngFor="let image of images; let i = index"
+      [attr.data-bs-slide-to]="i"
+      [class.active]="i === currentImageIndex"
+      [attr.aria-current]="i === currentImageIndex ? 'true' : null"
+      aria-label="Slide {{ i + 1 }}"
+      (click)="goToSlide(i)"
+    ></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let image of images; let i = index"
+      [class.active]="i === currentImageIndex"
+    >
+      <img [src]="image.src" class="d-block w-100" [alt]="image.title" />
+      <div class="carousel-caption d-none d-md-block">
+        <h5>{{ image.title }}</h5>
+        <!-- titulo de la imagen -->
+        <p>{{ image.description }}</p>
+        <!-- descripcion de la imagen -->
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" (click)="manualPrev()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <!-- icono de la flecha previa, aria-hidden="true" es para que no se muestre el icono en el navegador -->
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" (click)="manualNext()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <!-- icono de la flecha siguiente -->
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

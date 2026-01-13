@@ -1,0 +1,26 @@
+<div class="container">
+  <h4>Descubre lo que otros usuarios han publicado</h4>
+  <!-- comprueba si existe un usuario logueado de forma reactiva y si es true, muestra el botón para poder hacer una entrada-->
+  @if (authService.currentUser | async) {
+  <button class="custom-btn" (click)="newBlogEntry()">Añadir una publicación</button>
+  }
+
+  <div class="cards-container">
+    <!-- comprueba si blogs está vacío y muestra un mensaje de carga si es así -->
+    @if (blogs.length === 0) {
+    <p style="text-align: center; width: 100%; grid-column: 1/-1">Cargando publicaciones...</p>
+    }
+    <!-- Itera sobre la lista de blogs y crea una tarjeta para cada uno -->
+    @for (blog of blogs; track $index) {
+    <app-info-card
+      [route]="['/blog', blog._id]"
+      [imageUrl]="blog.img"
+      [title]="blog.title"
+      [username]="blog.username"
+      [likes]="blog.likes"
+      [date]="blog.createdAt"
+    >
+    </app-info-card>
+    }
+  </div>
+</div>

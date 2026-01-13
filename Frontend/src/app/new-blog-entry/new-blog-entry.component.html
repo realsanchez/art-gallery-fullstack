@@ -1,0 +1,60 @@
+<div class="login-page">
+  <div class="blog-card">
+    <div class="card-header-custom">
+      <h3>¿Qué obra de arte opinas que debería conocer todo el mundo?</h3>
+      <h5 class="text-muted">Comparte tu descubrimiento</h5>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <!-- Para poner la imagen por su url -->
+      <div class="mb-4">
+        <label for="img" class="form-label">URL de la Imagen</label>
+        <input
+          type="text"
+          class="form-control custom-input"
+          id="img"
+          name="img"
+          placeholder="https://ejemplo.com/imagen.jpg"
+          [ngModel]="img()"
+          (ngModelChange)="imgChange($event)"
+          required
+        />
+      </div>
+
+      <!-- Para poner el titulo de la obra -->
+      <div class="mb-4">
+        <label for="title" class="form-label">Título de la Obra</label>
+        <input
+          type="text"
+          class="form-control custom-input"
+          id="title"
+          name="title"
+          placeholder="Ej: La Noche Estrellada"
+          [ngModel]="title()"
+          (ngModelChange)="titleChange($event)"
+          required
+        />
+      </div>
+
+      <!-- Para poner el contenido -->
+      <div class="mb-4">
+        <label for="content" class="form-label">Cuéntanos sobre ella</label>
+        <textarea
+          class="form-control custom-input"
+          id="content"
+          name="content"
+          rows="6"
+          placeholder="Escribe aquí tu reseña o comentario..."
+          [ngModel]="content()"
+          (ngModelChange)="contentChange($event)"
+          required
+        ></textarea>
+      </div>
+
+      <!-- Boton para publicar la entrada -->
+      <div class="d-grid gap-2 mt-5">
+        <button type="submit" class="btn btn-primary custom-btn">Publicar Entrada</button>
+      </div>
+    </form>
+  </div>
+</div>

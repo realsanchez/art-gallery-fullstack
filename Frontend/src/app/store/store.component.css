@@ -1,0 +1,64 @@
+/* Título */
+.marketplace-title {
+  font-weight: 600;
+  color: #1f2d3d;
+}
+
+/* Card principal */
+.artwork-card {
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #ffffff;
+}
+
+.artwork-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Imagen placeholder */
+.artwork-img {
+  height: 180px;
+  background: linear-gradient(135deg, #1f2d3d, #243b55);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.artwork-icon {
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+/* Título obra */
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2d3d;
+}
+
+/* Artista */
+.card-subtitle {
+  font-size: 0.85rem;
+}
+
+/* Precio */
+.card-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f57c00; /* naranja del navbar */
+}
+
+/* Botón personalizado */
+.btn-brand {
+  background-color: #1f2d3d;
+  color: #ffffff;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-brand:hover {
+  background-color: #f57c00;
+  color: #ffffff;
+}

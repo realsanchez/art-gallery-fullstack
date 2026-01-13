@@ -1,0 +1,20 @@
+<!-- Info Card Component es como una herramienta reutilizabe que se puede usar en cualquier lugar de la app -->
+<div class="card">
+  <a [routerLink]="route">
+    <img [src]="imageUrl" [alt]="title" />
+    <h3>{{ title }}</h3>
+    @if (description) {
+    <p>{{ description }}</p>
+    } @if (username || likes || date) {
+    <div class="card-footer">
+      @if (username) {
+      <span class="meta-item author">{{ username }}</span>
+      } @if (date) {
+      <span class="meta-item date">{{ date }}</span>
+      } @if (likes) {
+      <span class="meta-item likes"> {{ likes }}</span>
+      }
+    </div>
+    }
+  </a>
+</div>

@@ -1,0 +1,114 @@
+/* Navbar Custom Styles */
+.custom-navbar {
+  background-color: #14213D !important; /* Dark Blue */
+  padding: 1rem 2rem; /* Restauramos el padding original ya que no hay sidebar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.custom-navbar .navbar-brand {
+  color: #FCA311 !important; /* Orange */
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.custom-navbar .navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.custom-navbar .nav-link {
+  color: #E5E5E5 !important;
+  font-weight: 500;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #FCA311 !important;
+  transform: translateY(-2px);
+}
+
+.custom-navbar .nav-link.disabled {
+  color: #6c757d !important;
+}
+
+/* Toggler */
+.custom-navbar .navbar-toggler {
+  border-color: #FCA311;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(252, 163, 17, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Dropdown */
+.custom-navbar .dropdown-menu {
+  background-color: #14213D;
+  border: 1px solid #FCA311;
+}
+
+.custom-navbar .dropdown-item {
+  color: #E5E5E5;
+}
+
+.custom-navbar .dropdown-item:hover {
+  background-color: #FCA311;
+  color: #14213D;
+}
+
+.custom-navbar .dropdown-divider {
+  border-top-color: #6c757d;
+}
+
+/* Search Form */
+.custom-navbar .form-control {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #6c757d;
+  color: #FFFFFF;
+}
+
+.custom-navbar .form-control:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #FCA311;
+  box-shadow: none;
+  color: #FFFFFF;
+}
+
+.custom-navbar .form-control::placeholder {
+  color: #adb5bd;
+}
+
+.btn-outline-custom {
+  color: #FCA311;
+  border-color: #FCA311;
+}
+
+.btn-outline-custom:hover {
+  background-color: #FCA311;
+  color: #14213D;
+}
+
+/* Estilos para la imagen de perfil en el navbar */
+.profile-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%; /* Hace la imagen redonda */
+  object-fit: cover;  /* Asegura que la imagen no se deforme */
+  border: 2px solid #FCA311; /* Borde naranja */
+}
+
+.profile-menu .dropdown-menu {
+  background-color: #14213D;
+  border: 1px solid #FCA311;
+  margin-top: 0.5rem;
+}
+
+.profile-menu .dropdown-item {
+  color: #E5E5E5;
+}
+
+.profile-menu .dropdown-item:hover {
+  background-color: #FCA311;
+  color: #14213D;
+}

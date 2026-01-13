@@ -1,0 +1,93 @@
+:host {
+  display: block;
+  min-height: 100vh;
+  /* background-color inherited from body (#E5E5E5) */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.blog-detail-card {
+  background-color: #FFFFFF;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 900px;
+  border-top: 5px solid #FCA311; /* Orange accent */
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+h3 {
+  color: #14213D;
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #E5E5E5;
+}
+
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+img {
+  max-width: 50%; /* Requisito del usuario: no más de la mitad */
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+.content-text {
+  color: #333;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify; /* Requisito del usuario */
+  white-space: pre-wrap; /* Mantiene saltos de línea del input original */
+}
+
+/* Distinción de párrafos */
+.content-text::first-letter {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FCA311;
+}
+
+.meta-info {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #E5E5E5;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta-item strong {
+  color: #14213D;
+}

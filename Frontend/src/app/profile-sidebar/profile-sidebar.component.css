@@ -1,0 +1,69 @@
+/* Profile Sidebar Styling */
+.profile-sidebar {
+  position: fixed;
+  top: 0;           /* Empieza desde la parte superior (Top) de la pantalla */
+  bottom: 0;        /* Termina en la parte inferior (Bottom) */
+  right: 0;         /* Bloqueado a la derecha */
+  height: 100vh;    /* 100% de la altura visible (Viewport Height) */
+
+  background-color: #14213D; /* Azul Oscuro */
+  color: #E5E5E5;            /* Texto claro */
+  padding: 1rem;
+  
+  /* Eliminamos el border-radius para que parezca una columna recta */
+  border-radius: 0; 
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1000;    /* Asegura que esté por encima de otros elementos */
+  width: 60px;      /* Ancho inicial (colapsado) */
+  overflow: hidden; /* Oculta el contenido que se estira al expandir */
+  white-space: nowrap;
+  
+  border-left: 2px solid #FCA311; /* Borde naranja a la izquierda */
+  cursor: pointer;
+  
+  display: flex;       /* Usamos flexbox para alinear el contenido */
+  flex-direction: column;
+  justify-content: flex-start; /* Contenido alineado arriba */
+  padding-top: 80px;   /* Espacio extra arriba para no chocar con la navbar si es necesario */
+}
+
+/* Estilo cuando está expandido */
+.profile-sidebar.expanded {
+  width: 250px; /* Ancho extendido para mostrar la información */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* Animación suave para e l contenido */
+  opacity: 0; 
+  transition: opacity 0.2s ease-in;
+}
+
+/* Mostramos la info solo cuando el sidebar es lo suficientemente ancho O controlamos la opacidad */
+.profile-sidebar.expanded .user-info {
+  opacity: 1;
+}
+
+/* Cuando esta colapsado, mostramos al menos la imagen */
+.profile-sidebar .user-info {
+  opacity: 1; /* Forzamos visibilidad, pero width limitará qué se ve */
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #FCA311;
+  flex-shrink: 0; /* Evita que la imagen se aplaste */
+}
+
+.user-info span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #E5E5E5;
+}

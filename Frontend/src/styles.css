@@ -1,0 +1,114 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Art Palette: #000000, #14213D, #FCA311, #E5E5E5, #FFFFFF */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E5E5E5; /* Light Gray Global Background */
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #14213D; /* Dark Blue Background */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.login-card {
+  background-color: #FFFFFF; /* White Card */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); /* Strong shadow for depth */
+  width: 100%;
+  max-width: 400px;
+  border-top: 5px solid #FCA311; /* Orange accent top border */
+}
+
+.blog-card {
+  background-color: #FFFFFF; /* White Card */
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 800px; /* Wider for blog entries */
+  border-top: 5px solid #FCA311;
+}
+
+.card-header-custom {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.card-header-custom h3 {
+  color: #14213D; /* Dark Blue Text */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.card-header-custom p {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.form-label {
+  color: #14213D;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.custom-input {
+  border: 2px solid #E5E5E5; /* Light Gray Border */
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #FCA311; /* Orange Focus */
+  box-shadow: 0 0 0 0.2rem rgba(252, 163, 17, 0.25);
+  outline: none;
+}
+
+.custom-btn {
+  background-color: #FCA311; /* Orange Button */
+  border: none;
+  color: #000000; /* Black Text */
+  font-weight: 700;
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  background-color: #e5940e; /* Slightly darker orange on hover */
+  transform: translateY(-1px);
+}
+
+.forgot-password {
+  color: #14213D;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover {
+  color: #FCA311;
+  text-decoration: underline;
+}
+
+.alert-danger {
+  background-color: #fff5f5;
+  border-color: #ffcccc;
+  color: #cc0000;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}

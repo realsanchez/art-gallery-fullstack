@@ -1,0 +1,180 @@
+/* ===== HOST & LAYOUT ===== */
+:host {
+  display: block;
+  width: 100%;
+  padding: 2rem 1rem;
+  background-color: #E5E5E5; /* Light Grey Background */
+  color: #14213D; /* Dark Blue Text for page content */
+  min-height: 100vh;
+}
+
+h2 {
+  text-align: center;
+  color: #14213D; /* Dark Blue Heading */
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ===== GRID CONTAINER ===== */
+.container-obras {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ===== CARD STYLE ===== */
+.obra {
+  background-color: #14213D; /* Dark Blue Card */
+  color: #FFFFFF; /* White Text */
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 5px solid #FCA311;
+  height: 100%;
+  position: relative;
+}
+
+.obra:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== TYPOGRAPHY & ELEMENTS ===== */
+.obra span:first-child { /* Title */
+  color: #FCA311; /* Orange Title inside card */
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.obra span:nth-child(2) { /* Artist/Year */
+  color: #E5E5E5; /* Light Grey for subtitle */
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.obra img {
+  width: 100%;
+  height: 300px; /* Fixed height for consistency */
+  object-fit: contain; /* Show full image */
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  background-color: #f8f9fa; /* Light background for non-square images */
+  
+  /* Critical for grid to not explode */
+  min-width: 0; 
+}
+
+.obra p {
+  color: #FFFFFF; /* White Description */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1; /* Push button to bottom */
+}
+
+/* ===== BUTTON ===== */
+.btn-ver-mas {
+  background-color: #FCA311;
+  color: #14213D;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+  background-color: #FFFFFF;
+  color: #14213D;
+}
+
+/* ===== MODAL ===== */
+.modal-fondo {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 33, 61, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-tarjeta {
+  background-color: #14213D; /* Dark Blue Modal */
+  color: #FFFFFF; /* White Text */
+  padding: 2.5rem;
+  border-radius: 16px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+  max-height: 90vh; /* Prevent overflow */
+  overflow-y: auto;
+  border: 1px solid #FCA311; /* Add border to pop against background */
+}
+
+.modal-tarjeta h3 {
+  color: #FCA311;
+  margin-bottom: 0.5rem;
+}
+
+.modal-tarjeta span {
+  display: block;
+  color: #E5E5E5;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.modal-tarjeta img {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.btn-cerrar {
+  background-color: #FCA311;
+  color: #14213D;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn-cerrar:hover {
+  background-color: #FFFFFF;
+  color: #14213D;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .container-obras {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .modal-tarjeta {
+    width: 90%;
+    margin: 0 1rem;
+    padding: 1.5rem;
+  }
+}

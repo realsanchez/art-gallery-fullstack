@@ -1,0 +1,27 @@
+<div class="container py-4">
+  <h2>Detalle de la obra</h2>
+
+  @if (isLoading()) {
+    <p>Cargando obra...</p>
+  }
+
+  @if (errorMsg()) {
+    <p>{{ errorMsg() }}</p>
+  }
+
+  @if (!isLoading() && obra(); as o) {
+    <div class="card p-3">
+      <h3 class="mb-2">{{ o.titulo }}</h3>
+
+      <p><strong>Artista:</strong> {{ o.artista?.nombre ?? 'Sin artista' }}</p>
+      <p><strong>Año:</strong> {{ o.anio }}</p>
+      <p><strong>Tipo:</strong> {{ o.tipo }}</p>
+      <p><strong>Precio:</strong> {{ o.precio }} €</p>
+      <p><strong>Estado:</strong> {{ o.disponible ? 'Disponible' : 'No disponible' }}</p>
+
+      <a routerLink="/store" class="btn btn-outline-secondary mt-2">
+        Volver al marketplace
+      </a>
+    </div>
+  }
+</div>

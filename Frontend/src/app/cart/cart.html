@@ -1,0 +1,131 @@
+
+<div class="container py-4">
+
+  <!-- Header del carrito: título + botón para volver a la tienda -->
+  <div class="d-flex align-items-center justify-content-between mb-3">
+    <h2 class="m-0">Carrito</h2>
+
+    <!-- Link de navegación con RouterLink (no recarga la página) -->
+    <a class="btn btn-outline-secondary btn-sm" routerLink="/store">
+      ← Seguir comprando
+    </a>
+  </div>
+
+  <!-- si el carrito está vacío, mostramos un mensaje -->
+  @if (cart.items().length === 0) {
+    <div class="alert alert-info">
+      Tu carrito está vacío.
+    </div>
+
+  } @else {
+
+    
+    <div class="list-group mb-3">
+
+      <!-- Loop moderno de Angular (@for)
+           track item.obra._id: clave ÚNICA para que Angular renderice eficiente
+           (evita warnings de duplicated keys y mejora performance) -->
+      @for (item of cart.items(); track item.obra._id) {
+
+        <div class="list-group-item">
+
+          <!-- Layout responsive: se adapta al ancho (wrap) y mantiene todo alineado -->
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+
+            <!-- Info principal de la obra -->
+            <div class="me-auto">
+              <div class="fw-semibold">{{ item.obra.titulo }}</div>
+
+              <!-- Si no hay artista, mostramos 'Anónimo' (fallback) -->
+              <div class="text-muted small">
+                {{ item.obra.artista?.nombre || 'Anónimo' }}
+              </div>
+
+              <!-- Precio unitario de la obra (si precio es null/undefined => 0) -->
+              <div class="text-muted small">
+                Precio: {{ item.obra.precio ?? 0 }} €
+              </div>
+            </div>
+
+            <!-- Controles de cantidad (botón -, input, botón +) -->
+            <div class="d-flex align-items-center gap-2">
+
+              <!-- Botón -: llama a cart.dec() que resta 1 o elimina si llega a 0 -->
+              <button
+                class="btn btn-outline-secondary btn-sm"
+                type="button"
+                (click)="cart.dec(item.obra._id)"
+                aria-label="Disminuir cantidad"
+              >
+                −
+              </button>
+
+              <!-- Input cantidad: muestra item.qty y llama a cart.setQty() cuando cambia -->
+              <input
+                type="number"
+                class="form-control form-control-sm text-center"
+                style="width: 84px;"
+                [value]="item.qty"
+                min="1"
+                (input)="cart.setQty(item.obra._id, $any($event.target).value)"
+                aria-label="Cantidad"
+              />
+
+              <!-- Botón +: llama a cart.inc() que suma 1 -->
+              <button
+                class="btn btn-outline-secondary btn-sm"
+                type="button"
+                (click)="cart.inc(item.obra._id)"
+                aria-label="Aumentar cantidad"
+              >
+                +
+              </button>
+            </div>
+
+            <!-- Subtotal por item + botón quitar -->
+            <div class="d-flex align-items-center gap-2">
+
+              <!-- Columna subtotal: precio unitario * cantidad -->
+              <div class="text-end" style="min-width: 110px;">
+                <div class="fw-semibold">
+                  {{ (item.obra.precio ?? 0) * item.qty }} €
+                </div>
+                <div class="text-muted small">Subtotal</div>
+              </div>
+
+              <!-- Quitar: elimina el item completo del carrito -->
+              <button
+                class="btn btn-outline-danger btn-sm"
+                type="button"
+                (click)="cart.remove(item.obra._id)"
+              >
+                Quitar
+              </button>
+            </div>
+
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- Total general del carrito ( reactivo) -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+      <div class="fw-semibold">Total:</div>
+      <div class="fs-5 fw-bold">{{ cart.total() }} €</div>
+    </div>
+
+    <!-- Acciones finales -->
+    <div class="mt-3 d-flex flex-wrap gap-2">
+
+      <!-- Vaciar carrito: llama a cart.clear() -->
+      <button class="btn btn-outline-secondary" type="button" (click)="cart.clear()">
+        Vaciar carrito
+      </button>
+
+      <!-- Checkout lo dejamos deshabilitado porque todavía no está implementado -->
+      <button class="btn btn-success" type="button" disabled>
+        Checkout (después)
+      </button>
+    </div>
+  }
+</div>

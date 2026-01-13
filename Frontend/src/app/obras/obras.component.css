@@ -1,0 +1,17 @@
+.obras {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.obra {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background: #fafafa;
+}
+
+.obra img {
+  width: 100%;
+  border-radius: 8px;
+}

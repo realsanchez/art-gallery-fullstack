@@ -1,0 +1,13 @@
+<div
+  class="profile-sidebar"
+  [class.expanded]="isExpanded"
+  (mouseenter)="isExpanded = true"
+  (mouseleave)="isExpanded = false"
+  *ngIf="user"
+>
+  <div class="user-info">
+    <img [src]="user.image" [alt]="user.username" />
+    <span *ngIf="isExpanded">Bienvenid@ {{ user.username }}</span>
+    <span *ngIf="!isExpanded">{{ user.username }}</span>
+  </div>
+</div>

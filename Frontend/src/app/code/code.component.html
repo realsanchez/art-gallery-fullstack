@@ -1,0 +1,24 @@
+<div class="login-page">
+  <div class="login-card">
+    <div class="card-header-custom">
+      <h3>Verificación de Código</h3>
+      <p class="text-muted">Se ha enviado un código de verificación a tu email</p>
+    </div>
+    <form (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label for="code" class="form-label">Introduce el código</label>
+        <input
+          type="text"
+          class="form-control custom-input"
+          id="code"
+          name="code"
+          [ngModel]="code()"
+          (ngModelChange)="codeChange($event)"
+        />
+      </div>
+      <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary custom-btn">Enviar</button>
+      </div>
+    </form>
+  </div>
+</div>
